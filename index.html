@@ -1,104 +1,104 @@
-<!DOCTYPE HTML>
-<HTML lang="ko">
-<머리>
- <meta charset=>UTF-8">
- <meta 이름="viewport" 콘텐츠="width=장치 너비, 초기 스케일=1.0">
- <title>나의 홈페이지</title>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 홈페이지</title>
 
-    <스타일.>
- 몸 {
- 여백: 0;
- 폰트 패밀리: 산세리프;
- background: #f5f5f5;
- 색상: #222;
- }
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
 
- 헤더 {
- 배경: 흰색;
- 패딩: 25 px;
- 텍스트 align: 중심;
- 테두리 하단: px 솔리드 #DDd 1개;
- }
+    header {
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
 
- 내비게이션 {
- 마진 탑: 15 px;
- }
+    nav {
+      margin-top: 15px;
+    }
 
- 내비게이션 버튼 {
- 패딩: 10 px 18 px;
- 여백: 5 px;
- 경계: 없음;
- 국경 radius: 8 px;
- 배경: #222;
- 색상: 흰색;
- 커서: 포인터;
- }
+    nav button {
+      padding: 10px 18px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: white;
+      cursor: pointer;
+    }
 
- 주된 {
- 최대 너비: 700 px;
- 마진: 40 px 오토;
- 패딩: 30 px;
- 배경: 흰색;
- 국경 radius: 15 px;
- box-shadow: 0 4px 15px rgba(0,0,0,0.08);
- }
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
 
- .페이지 {
- 표시: 없음;
- }
+    .page {
+      display: none;
+    }
 
- .page.active {
- 디스플레이: 차단;
- }
-    </스타일.>
-</머리>
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
 
-<몸>
+<body>
 
-<헤더>
- <h1>나의 홈페이지</h1>
+  <header>
+    <h1>나의 홈페이지</h1>
 
-    <내비게이션>
- <버튼 클릭="showPage('홈')">홈</버튼>
- <버튼 클릭="showPage('정보')">소개</버튼>
- <버튼 클릭="showPage('diary')">기록</버튼>
- 클릭 버튼="showPage('갤러리')"갤러리</버튼>
-    </내비게이션>
-</헤더>
+    <nav>
+      <button onclick="showPage('home')">홈</button>
+      <button onclick="showPage('about')">소개</button>
+      <button onclick="showPage('diary')">기록</button>
+      <button onclick="showPage('gallery')">갤러리</button>
+    </nav>
+  </header>
 
-<주된>
+  <main>
 
- <섹션 ID="홈" 클래스="페이지 활성화">
- <h2>안녕하세요!</h2>
- <p>여기는 나의 개인 홈페이지입니다.</p>
-    </부분>
+    <section id="home" class="page active">
+      <h2>안녕하세요!</h2>
+      <p>여기는 나의 개인 홈페이지입니다.</p>
+    </section>
 
- <섹션 ID="class="page">
- <h2>나의 소개</h2>
- <p>여기에 자기소개를 작성하세요.</p>
-    </부분>
+    <section id="about" class="page">
+      <h2>나의 소개</h2>
+      <p>여기에 자기소개를 작성하세요.</p>
+    </section>
 
- <섹션 ID="diary" 클래스="페이지">
- <h2>기록</h2>
- <p>여기에 글이나 일상을 기록할 수 있습니다.</p>
-    </부분>
+    <section id="diary" class="page">
+      <h2>기록</h2>
+      <p>여기에 글이나 일상을 기록할 수 있습니다.</p>
+    </section>
 
- <섹션 ID="gallery" 클래스="페이지">
- <h2>갤러리</h2>
- <p>여기에 사진 등을 넣을 수 있습니다.</p>
-    </부분>
+    <section id="gallery" class="page">
+      <h2>갤러리</h2>
+      <p>여기에 사진 등을 넣을 수 있습니다.</p>
+    </section>
 
-</주된>
+  </main>
 
-<대본>
- 함수 showPage(페이지Id) {
- 문서.쿼리SelectorAll(.page').각각에 대해 (페이지 => {
- page.classList.remove('활성');
- });
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
 
- document.getElementById(페이지Id).classList.add('활성');
- }
-</대본>
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 
-</몸>
-</HTML>
+</body>
+</html>
